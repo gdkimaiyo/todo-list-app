@@ -31,3 +31,7 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+## License
+
+[MIT](https://github.com/gdkimaiyo/todo-list-app/blob/master/LICENSE.md)

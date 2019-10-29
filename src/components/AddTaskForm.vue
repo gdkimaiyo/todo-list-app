@@ -16,7 +16,8 @@
       <span>
         <button type="button" name="button" class="button" @click="handleSubmitTask">Add</button>
       </span>
-      <span v-if="error && submitting" class="error-message">❗Please fill out a task.</span>
+      <span v-if="error && submitting" class="error-message">Please fill out a task.</span>
+      <span v-if="success" class="success-message">Success! Task added.</span>
     </form>
   </div>
 </template>
@@ -64,7 +65,7 @@ export default {
       };
 
       this.error = false;
-      this.success = false;
+      this.success = true;
     },
     clearStatus() {
       this.success = false;

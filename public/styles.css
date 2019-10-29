@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Mobile :first */
+/* Base Styles. Styles to apply to ALL layouts */
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 16px;
+}
+
+.sub-content {
+  width: 100%;
+  padding: 18px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+}
+
+.section {
+  width: 100%;
+  display: flex;
+}
+
+.menu {
+  width: 100%;
+  background: linear-gradient(-90deg, #84cf6a, #16c0b0);
+  /* background-color: #28a745; */
+  color: #ffffff;
+}
+
+.menu-content {
+  width: 100%;
+  padding: 12px;
+  justify-content: center;
+  text-align: center;
+}
+
+.sub-content-element {
+  padding: 4px;
+}
+
+.sub-content-element * {
+  padding: 4px;
+}
+
+.search-form {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  display: block;
+  margin: 5px;
+  /* cursor: pointer; */
+  /* background-color: rgba(0, 128, 0, 0.15); */
+  /* background-color: rgba(0, 128, 0, 0.25); */
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+/* li:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.05);
+} */
+
+li:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+button {
+  border: none;
+  height: 30px;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 14px;
+  background-color: #1e95ea;
+}
+
+.disabledButton {
+  background-color: #d8d8d8;
+}
+
+.btn-danger {
+  background-color: #ec5840;
+}
+
+.btn-done {
+  background-color: #696969;
+}
+
+[class*="-message"] {
+  font-weight: 500;
+}
+
+.error-message {
+  color: #d33c40;
+}
+
+.success-message {
+  color: #32a95d;
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 401px) {
+  .menu-content {
+    width: 960px;
+    margin: 0 auto;
+  }
+
+  .menu-content {
+    text-align: left;
+    padding: 12px;
+  }
+
+  .search-form {
+    width: 300px;
+  }
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 961px) {
+  .content,
+  .menu-content {
+    width: 960px;
+    margin: 0 auto;
+  }
+
+  .menu-content {
+    text-align: left;
+    padding: 12px;
+  }
+
+  .search-form {
+    width: 300px;
+  }
+}
+/*
+a {
+  color: #42b983;
+}
+*/

@@ -1,0 +1,75 @@
+<template>
+  <div id="todo-task-form" class="sub-content-element">
+    <h3>Add TODO Task</h3>
+    <form @submit.prevent="handleSubmitTask">
+      <span>
+        <input
+          type="text"
+          class="search-form"
+          :class="{'has-error': submitting}"
+          v-model="todoTask.task"
+          @focus="clearStatus"
+          @keypress="clearStatus"
+          placeholder="Add New Task"
+        />
+      </span>
+      <span>
+        <button type="button" name="button" class="button" @click="handleSubmitTask">Add</button>
+      </span>
+      <span v-if="error && submitting" class="error-message">❗Please fill out a task.</span>
+    </form>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "AddTaskForm",
+
+  data() {
+    return {
+      error: false,
+      success: false,
+      submitting: false,
+
+      todoTask: {
+        task: ""
+      }
+    };
+  },
+
+  props: {},
+
+  components: {},
+
+  computed: {
+    // invalidEntry() {
+    //   this.todoTask.task = "";
+    //   return this.todoTask.task;
+    // }
+  },
+
+  methods: {
+    handleSubmitTask(ev) {
+      ev.preventDefault();
+      (this.submitting = true), this.clearStatus();
+
+      if (this.todoTask.task == "") {
+        this.error = true;
+        return;
+      }
+
+      this.$emit("add:task", this.todoTask);
+      this.todoTask = {
+        task: ""
+      };
+
+      this.error = false;
+      this.success = false;
+    },
+    clearStatus() {
+      this.success = false;
+      this.error = false;
+    }
+  }
+};
+</script>

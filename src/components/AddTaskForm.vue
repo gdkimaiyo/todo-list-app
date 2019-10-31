@@ -6,7 +6,6 @@
         <input
           type="text"
           class="search-form"
-          :class="{'has-error': submitting}"
           v-model="todoTask.task"
           @focus="clearStatus"
           @keypress="clearStatus"
@@ -14,7 +13,7 @@
         />
       </span>
       <span>
-        <button type="button" name="button" class="button" @click="handleSubmitTask">Add</button>
+        <button type="button" name="button" class="button btn-info" @click="handleSubmitTask">Add</button>
       </span>
       <span v-if="error && submitting" class="error-message">Please fill out a task.</span>
       <span v-if="success" class="success-message">Success! Task added.</span>
@@ -42,12 +41,7 @@ export default {
 
   components: {},
 
-  computed: {
-    // invalidEntry() {
-    //   this.todoTask.task = "";
-    //   return this.todoTask.task;
-    // }
-  },
+  computed: {},
 
   methods: {
     handleSubmitTask(ev) {

@@ -15,25 +15,10 @@
       </div>
 
       <add-task-form @add:task="AddTask" />
-      <!-- <div class="sub-content-element">
-        <h3>Add TODO Task</h3>
-        <span>
-          <input
-            type="text"
-            class="search-form"
-            id="filter"
-            @keyup.enter="AddTask"
-            placeholder="Add New Task"
-          />
-        </span>
-        <span>
-          <button type="button" name="button" class="button" @click="AddTask">
-              <i class="material-icons">add</i>
-          </button>
-        </span>
-      </div>-->
 
-      <list-item :tasks="tasks" />
+      <p>
+        <list-item :tasks="tasks" @complete:task="completeTask" @delete:task="deleteTask" />
+      </p>
     </div>
   </div>
 </template>
@@ -41,7 +26,6 @@
 <script>
 import ListItem from "./ListItem.vue";
 import AddTaskForm from "./AddTaskForm.vue";
-// import BaseButton from "./BaseButton.vue";
 
 export default {
   name: "TodoList",
@@ -60,15 +44,23 @@ export default {
       tasks: [
         {
           id: 1,
-          task: "Create a TODO list with vue"
+          task: "Create a TODO list with vue",
+          completed: true
         },
         {
           id: 2,
-          task: "Create a TODO list with angular"
+          task: "Create a TODO list with Vanilla JavaScript",
+          completed: true
         },
         {
           id: 3,
-          task: "Create a TODO list with react"
+          task: "Create a TODO list with react",
+          completed: false
+        },
+        {
+          id: 4,
+          task: "Create a TODO list with angular",
+          completed: false
         }
       ]
     };
@@ -80,16 +72,21 @@ export default {
       alert("Searching isn't functional yet!..");
     },
     AddTask(todoTask) {
-      console.log("AddTask triggered...");
       const lastId =
         this.tasks.length > 0 ? this.tasks[this.tasks.length - 1].id : 0;
       const id = lastId + 1;
-      const newTodoTask = { ...todoTask, id };
+      const completed = false;
+      const newTodoTask = { ...todoTask, id, completed };
 
       this.tasks = [...this.tasks, newTodoTask];
     },
-    RemoveItem() {
-      console.log("Remove task triggered...");
+    completeTask(id) {
+      const targetId = id - 1;
+      this.tasks[targetId].completed = !this.tasks[targetId].completed;
+    },
+    deleteTask(id) {
+      // filter deleted task out
+      this.tasks = this.tasks.filter(task => task.id !== id);
     }
   }
 };

@@ -44,8 +44,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ### Yet to do
 
 - Make search button functional
-- Click done to complete a task
-- Remove completed tasks
+- Fix removal and completion task issues
 - General refactoring
 - General styling
 

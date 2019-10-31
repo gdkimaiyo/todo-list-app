@@ -62,15 +62,8 @@ ul {
 li {
   display: block;
   margin: 5px;
-  /* cursor: pointer; */
-  /* background-color: rgba(0, 128, 0, 0.15); */
-  /* background-color: rgba(0, 128, 0, 0.25); */
   border: 1px solid rgba(0, 0, 0, 0.125);
 }
-
-/* li:nth-child(even) {
-  background-color: rgba(0, 0, 0, 0.05);
-} */
 
 li:hover {
   background-color: rgba(0, 0, 0, 0.1);
@@ -78,25 +71,37 @@ li:hover {
 
 button {
   border: none;
-  height: 30px;
   color: white;
   font-size: 14px;
   cursor: pointer;
-  padding: 14px;
-  background-color: #1e95ea;
 }
 
 .disabledButton {
   background-color: #d8d8d8;
 }
 
+.btn-info {
+  height: 30px;
+  background-color: #1e95ea;
+}
 .btn-danger {
   background-color: #ec5840;
+  margin-right: 8px;
+  position: relative;
+  /* top: 5px; */
+  /* left: 5px; */
 }
 
-.btn-done {
-  background-color: #696969;
+input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  position: relative;
 }
+
+/* .btn-done {
+  background-color: #696969;
+} */
 
 [class*="-message"] {
   font-weight: 500;
@@ -108,6 +113,9 @@ button {
 
 .success-message {
   color: #32a95d;
+}
+.task-item-completed {
+  text-decoration: line-through;
 }
 
 /* Tablet Styles */

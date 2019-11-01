@@ -17,7 +17,7 @@
       <add-task-form @add:task="AddTask" />
 
       <p>
-        <list-item :tasks="tasks" @complete:task="completeTask" @delete:task="deleteTask" />
+        <list-item :tasks="tasks" @complete:task="completeTask" @delete:tasks="clearAll" />
       </p>
     </div>
   </div>
@@ -44,22 +44,22 @@ export default {
       tasks: [
         {
           id: 1,
-          task: "Create a TODO list with vue",
+          task: "Create a Todo list with vue",
           completed: true
         },
         {
           id: 2,
-          task: "Create a TODO list with Vanilla JavaScript",
+          task: "Create a Todo list with Vanilla JavaScript",
           completed: true
         },
         {
           id: 3,
-          task: "Create a TODO list with react",
+          task: "Create a Todo list with react",
           completed: false
         },
         {
           id: 4,
-          task: "Create a TODO list with angular",
+          task: "Create a Todo list with angular",
           completed: false
         }
       ]
@@ -84,9 +84,8 @@ export default {
       const targetId = id - 1;
       this.tasks[targetId].completed = !this.tasks[targetId].completed;
     },
-    deleteTask(id) {
-      // filter deleted task out
-      this.tasks = this.tasks.filter(task => task.id !== id);
+    clearAll() {
+      this.tasks = [];
     }
   }
 };

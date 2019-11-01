@@ -1,27 +1,30 @@
 <template>
   <div class="sub-content-element">
-    <h4>TODO</h4>
-    <div v-if="tasks.length < 1">
-      <span class="error-message">No available tasks</span>
-    </div>
-    <div v-else>
-      <p>
-        <!-- <button class="btn-danger" @click="$emit('remove:task')">Remove Completed</button> -->
-      </p>
-      <ul class="tasks">
-        <li v-for="task in tasks" :key="task.id">
-          <button class="btn-danger" @click="$emit('delete:task',task.id)">
-            <i class="material-icons">delete</i>
-          </button>
-          <input
-            type="checkbox"
-            v-bind:checked="selected ? task.completed : !task.completed"
-            @change="$emit('complete:task',task.id)"
-          />
-          <span :class="{'task-item-completed': task.completed}">{{ task.task }}</span>
-        </li>
-      </ul>
-    </div>
+    <h3>Todo</h3>
+    <p>
+      <span>
+        <button
+          class="btn-danger"
+          @click="taskCompleted = !taskCompleted"
+        >Hide/Show completed task(s)</button>
+      </span>
+      <span>
+        <button class="btn-danger" @click="$emit('delete:tasks')">Delete All</button>
+      </span>
+    </p>
+    <p v-if="this.tasks.filter(this.inProgress).length < 1">
+      <span class="error-message">No Todo task!</span>
+    </p>
+    <ul class="tasks">
+      <li v-for="task in switchTasks" :key="task.id">
+        <input
+          type="checkbox"
+          v-bind:checked="selected ? task.completed : !task.completed"
+          @change="$emit('complete:task',task.id)"
+        />
+        <span :class="{'task-item-completed': task.completed}">{{ task.task }}</span>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -31,7 +34,8 @@ export default {
 
   data() {
     return {
-      selected: true
+      selected: true,
+      taskCompleted: false
     };
   },
 
@@ -39,8 +43,23 @@ export default {
     tasks: Array
   },
 
-  computed: {},
+  computed: {
+    switchTasks() {
+      if (this.taskCompleted) {
+        return this.tasks.filter(this.inProgress);
+      } else {
+        return this.tasks;
+      }
+    }
+  },
 
-  methods: {}
+  methods: {
+    inProgress(task) {
+      return !this.isCompleted(task);
+    },
+    isCompleted(task) {
+      return task.completed;
+    }
+  }
 };
 </script>

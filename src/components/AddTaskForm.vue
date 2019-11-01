@@ -1,6 +1,6 @@
 <template>
   <div id="todo-task-form" class="sub-content-element">
-    <h3>Add TODO Task</h3>
+    <h3>Add Todo Task</h3>
     <form @submit.prevent="handleSubmitTask">
       <span>
         <input

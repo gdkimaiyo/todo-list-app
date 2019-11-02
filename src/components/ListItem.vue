@@ -8,6 +8,7 @@
           class="search-form"
           id="filter"
           v-model="search"
+          @keypress="!filterTask"
           placeholder="Search for Todo..."
         />
       </span>
@@ -42,6 +43,7 @@ export default {
     return {
       selected: true,
       taskCompleted: false,
+      filterTask: true,
       search: ""
     };
   },
@@ -56,14 +58,14 @@ export default {
     switchTasks() {
       if (this.taskCompleted) {
         return this.tasks.filter(this.inProgress);
+      }
+      if (this.filterTask) {
+        return this.tasks.filter(task => {
+          return task.task.toLowerCase().includes(this.search.toLowerCase());
+        });
       } else {
         return this.tasks;
       }
-    },
-    filterTask() {
-      return this.tasks.filter(task => {
-        return task.task.toLowerCase().includes(this.search.toLowerCase());
-      });
     }
   },
 

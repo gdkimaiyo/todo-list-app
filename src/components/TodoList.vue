@@ -1,19 +1,6 @@
 <template>
   <div class="content">
     <div class="sub-content">
-      <!-- <div class="sub-content-element">
-        <span>
-          <input
-            type="text"
-            class="search-form"
-            id="filter"
-            v-model="filterTask"
-            @keyup.enter="FilterTask"
-            placeholder="Search for Todo..."
-          />
-        </span>
-      </div>-->
-
       <add-task-form @add:task="AddTask" />
 
       <p>

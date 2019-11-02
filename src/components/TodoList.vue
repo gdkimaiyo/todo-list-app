@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <div class="sub-content">
-      <div class="sub-content-element">
+      <!-- <div class="sub-content-element">
         <span>
           <input
             type="text"
@@ -9,15 +9,15 @@
             id="filter"
             v-model="filterTask"
             @keyup.enter="FilterTask"
-            placeholder="Search for TODO..."
+            placeholder="Search for Todo..."
           />
         </span>
-      </div>
+      </div>-->
 
       <add-task-form @add:task="AddTask" />
 
       <p>
-        <list-item :tasks="tasks" @complete:task="completeTask" @delete:tasks="clearAll" />
+        <list-item :tasks="tasks" @complete:task="completeTask" @delete:tasks="deleteAll" />
       </p>
     </div>
   </div>
@@ -67,10 +67,6 @@ export default {
   },
 
   methods: {
-    FilterTask() {
-      this.$emit("filter:task", this.filterTask);
-      alert("Searching isn't functional yet!..");
-    },
     AddTask(todoTask) {
       const lastId =
         this.tasks.length > 0 ? this.tasks[this.tasks.length - 1].id : 0;
@@ -84,7 +80,7 @@ export default {
       const targetId = id - 1;
       this.tasks[targetId].completed = !this.tasks[targetId].completed;
     },
-    clearAll() {
+    deleteAll() {
       this.tasks = [];
     }
   }

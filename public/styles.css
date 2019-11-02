@@ -80,13 +80,26 @@ button {
   background-color: #d8d8d8;
 }
 
+.btn-info,
+.btn-danger,
+.btn-done {
+  border-radius: 4px;
+  margin-top: 5px;
+}
 .btn-info {
   height: 30px;
   background-color: #1e95ea;
 }
+
+.btn-danger,
+.btn-done {
+  padding: 8px;
+}
 .btn-danger {
   background-color: #ec5840;
-  padding: 8px;
+}
+.btn-done {
+  background-color: #696969;
 }
 
 input[type="checkbox"] {
@@ -95,10 +108,6 @@ input[type="checkbox"] {
   cursor: pointer;
   position: relative;
 }
-
-/* .btn-done {
-  background-color: #696969;
-} */
 
 [class*="-message"] {
   font-weight: 500;
@@ -147,6 +156,11 @@ input[type="checkbox"] {
 
   .search-form {
     width: 300px;
+  }
+  .btn-info,
+  .btn-danger,
+  .btn-done {
+    margin: 0;
   }
 }
 /*

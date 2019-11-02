@@ -1,6 +1,13 @@
 # todo-list-app
 
-This is a simple To Do list Application created with vue
+This is a simple To Do list Web application created with vue
+
+## Application functionalities
+- Add a new Todo task
+- Check/Mark a task as complete
+- Search/Filter for a task
+- Show/Hide completed tasks
+- Delete all tasks
 
 ## Project setup
 
@@ -39,11 +46,11 @@ npm run lint
 
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
-## TODO
+## Status
+### What has been done
+- Funtionalities mentioned above are all done
 
 ### Yet to do
-
-- Make search button functional
 - General refactoring
 - General styling
 

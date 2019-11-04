@@ -1,6 +1,6 @@
 # todo-list-app
 
-This is a simple To Do list Web application created with vue
+This is a simple Todo list Web application created with vue
 
 ## Application functionalities
 
@@ -8,7 +8,9 @@ This is a simple To Do list Web application created with vue
 - Show/Display all tasks
 - Check/Mark a task as complete
 - Search/Filter for a task
+- Sort tasks by due date
 - Show/Hide completed tasks
+- Edit/Update a task
 - Delete all tasks
 
 ## Project setup
@@ -57,7 +59,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ### Yet to do
 
 - Enable editing of a task
-- Add Due date for a Todo task
+- Add due date for a Todo task
 - General refactoring
 - General styling
 

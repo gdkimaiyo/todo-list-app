@@ -1,7 +1,7 @@
 <template>
   <div class="section menu">
     <div class="menu-content">
-      <h2>TODO List</h2>
+      <h2>Todo List</h2>
     </div>
   </div>
 </template>

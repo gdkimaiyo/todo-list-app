@@ -56,6 +56,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### Yet to do
 
+- Enable editing of a task
+- Add Due date for a Todo task
 - General refactoring
 - General styling
 

@@ -1,7 +1,8 @@
 # todo-list-app
 
 This is a simple Todo list Web application created with vue
-Here is a preview: [https://todo-list-app-gdkimaiyo.netlify.com](https://todo-list-app-gdkimaiyo.netlify.com)
+
+Find a preview: [https://todo-list-app-gdkimaiyo.netlify.com](https://todo-list-app-gdkimaiyo.netlify.com)
 
 ## Application functionalities
 
